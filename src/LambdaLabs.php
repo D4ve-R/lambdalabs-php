@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace D4veR\LambdaLabs;
 
+use D4veR\LambdaLabs\Requests\Instance\Info;
 use D4veR\LambdaLabs\Requests\Instance\Launch;
+use D4veR\LambdaLabs\Requests\Instance\ListRunning;
+use D4veR\LambdaLabs\Requests\Instance\Restart;
 use D4veR\LambdaLabs\Requests\Instance\Terminate;
+use D4veR\LambdaLabs\Requests\Instance\Types;
 
 class LambdaLabs {
     
@@ -43,6 +47,44 @@ class LambdaLabs {
     public function terminate(array $ids): array 
     {
         $request = new Terminate($ids);
+        return $this->connector->send($request)->dtoOrFail();
+    }
+
+    /**
+     * Restart instances by their ids
+     * @param array<string> $ids
+     */
+    public function restart(array $ids): array
+    {
+        $request = new Restart($ids);
+        return $this->connector->send($request)->dtoOrFail();
+    }
+
+    /**
+     * Get instance info by id
+     * @param string $id
+     */
+    public function info(string $id): array
+    {
+        $request = new Info($id);
+        return $this->connector->send($request)->dtoOrFail();
+    }
+
+    /**
+     * Get all running instances info
+     */
+    public function running(): array
+    {
+        $request = new ListRunning();
+        return $this->connector->send($request)->dtoOrFail();
+    }
+
+    /**
+     * Get all instance types
+     */
+    public function types(): array
+    {
+        $request = new Types();
         return $this->connector->send($request)->dtoOrFail();
     }
 }

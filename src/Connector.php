@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace D4veR\LambdaLabs;
 
 use Saloon\Http\Auth\TokenAuthenticator;
