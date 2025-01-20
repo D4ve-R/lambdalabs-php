@@ -7,14 +7,15 @@ use Saloon\Http\Request;
 
 class Info extends Request
 {
-  protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
-  public function __construct(protected readonly string $id) {
-    //
-  }
+    public function __construct(protected readonly string $id)
+    {
+        //
+    }
 
-  public function resolveEndpoint(): string
-  {
-    return '/instances' . $this->id;
-  }
+    public function resolveEndpoint(): string
+    {
+        return '/instances'.$this->id;
+    }
 }

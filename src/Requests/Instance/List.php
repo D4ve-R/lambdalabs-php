@@ -7,10 +7,10 @@ use Saloon\Http\Request;
 
 class ListInstances extends Request
 {
-  protected Method $method = Method::GET;
-  
-  public function resolveEndpoint(): string
-  {
-    return '/instances';
-  }
+    protected Method $method = Method::GET;
+
+    public function resolveEndpoint(): string
+    {
+        return '/instances';
+    }
 }

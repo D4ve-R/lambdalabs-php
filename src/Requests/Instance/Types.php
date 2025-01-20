@@ -7,10 +7,10 @@ use Saloon\Http\Request;
 
 class Types extends Request
 {
-  protected Method $method = Method::GET;
-  
-  public function resolveEndpoint(): string
-  {
-    return '/instances-types';
-  }
+    protected Method $method = Method::GET;
+
+    public function resolveEndpoint(): string
+    {
+        return '/instances-types';
+    }
 }

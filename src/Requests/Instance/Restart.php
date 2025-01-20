@@ -9,23 +9,24 @@ use Saloon\Traits\Body\HasJsonBody;
 
 class Restart extends Request implements HasBody
 {
-  use HasJsonBody;
+    use HasJsonBody;
 
-  protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
-  public function __construct(protected readonly array $ids) {
-    //
-  }
+    public function __construct(protected readonly array $ids)
+    {
+        //
+    }
 
-  public function resolveEndpoint(): string
-  {
-    return '/instance-operations/restart';
-  }
+    public function resolveEndpoint(): string
+    {
+        return '/instance-operations/restart';
+    }
 
-  protected function defaultBody(): array
-  {
-    return [
-      'instance_ids' => $this->ids
-    ];
-  }
+    protected function defaultBody(): array
+    {
+        return [
+            'instance_ids' => $this->ids,
+        ];
+    }
 }
