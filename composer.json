@@ -2,8 +2,11 @@
     "name": "d4ver/lambdalabs-php",
     "description": "Lambda Labs Cloud API Client",
     "keywords": [
-        "D4veR",
-        "lambdalabs-php"
+        "lambdalabs",
+        "lambdalabs-php",
+        "gpu",
+        "cloud",
+        "deployment"
     ],
     "homepage": "https://github.com/d4ver/lambdalabs-php",
     "license": "MIT",

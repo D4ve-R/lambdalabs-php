@@ -25,8 +25,13 @@ composer require d4ver/lambdalabs-php
 ## Usage
 
 ```php
-$skeleton = new D4veR\LambdaLabs();
-echo $skeleton->echoPhrase('Hello, D4veR!');
+$client = new D4veR\LambdaLabs\LambdaLabs('YOUR_API_KEY');
+$ids = $client->launch();
+
+echo $client->info($ids[0]);
+echo $client->running();
+
+$client->terminate($ids);
 ```
 
 ## Testing
