@@ -11,8 +11,8 @@ use D4veR\LambdaLabs\Requests\Instance\Restart;
 use D4veR\LambdaLabs\Requests\Instance\Terminate;
 use D4veR\LambdaLabs\Requests\Instance\Types;
 
-class LambdaLabs {
-    
+class LambdaLabs
+{
     private LambdaLabsConnector $connector;
 
     public function __construct(
@@ -23,11 +23,9 @@ class LambdaLabs {
 
     /**
      * Launch instances
-     * @param string $regionName
-     * @param string $instanceType
-     * @param array<string> $sshKeys
-     * @param array<string> $fileSystems
-     * @param int $quantity
+     *
+     * @param  array<string>  $sshKeys
+     * @param  array<string>  $fileSystems
      */
     public function launch(
         string $regionName,
@@ -37,36 +35,41 @@ class LambdaLabs {
         int $quantity,
     ): array {
         $request = new Launch($regionName, $instanceType, $sshKeys, $fileSystems, $quantity);
+
         return $this->connector->send($request)->dtoOrFail();
     }
 
     /**
      * Terminate instances by their ids
-     * @param array<string> $ids
+     *
+     * @param  array<string>  $ids
      */
-    public function terminate(array $ids): array 
+    public function terminate(array $ids): array
     {
         $request = new Terminate($ids);
+
         return $this->connector->send($request)->dtoOrFail();
     }
 
     /**
      * Restart instances by their ids
-     * @param array<string> $ids
+     *
+     * @param  array<string>  $ids
      */
     public function restart(array $ids): array
     {
         $request = new Restart($ids);
+
         return $this->connector->send($request)->dtoOrFail();
     }
 
     /**
      * Get instance info by id
-     * @param string $id
      */
     public function info(string $id): array
     {
         $request = new Info($id);
+
         return $this->connector->send($request)->dtoOrFail();
     }
 
@@ -75,7 +78,8 @@ class LambdaLabs {
      */
     public function running(): array
     {
-        $request = new ListRunning();
+        $request = new ListRunning;
+
         return $this->connector->send($request)->dtoOrFail();
     }
 
@@ -84,7 +88,8 @@ class LambdaLabs {
      */
     public function types(): array
     {
-        $request = new Types();
+        $request = new Types;
+
         return $this->connector->send($request)->dtoOrFail();
     }
 }

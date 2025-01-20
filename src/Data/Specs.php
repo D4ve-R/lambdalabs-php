@@ -7,7 +7,9 @@ namespace D4veR\LambdaLabs\Data;
 class Specs
 {
     public int $vcpus;
+
     public int $memoryGib;
+
     public int $storageGib;
 
     public function __construct(int $vcpus, int $memoryGib, int $storageGib)

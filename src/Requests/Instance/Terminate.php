@@ -36,7 +36,7 @@ class Terminate extends Request implements HasBody
     public function createDtoFromResponse(Response $response): array
     {
         $data = $response->json();
-    
+
         return $data['terminated_instances'];
     }
 }

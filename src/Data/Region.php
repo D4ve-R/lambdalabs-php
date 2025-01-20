@@ -7,6 +7,7 @@ namespace D4veR\LambdaLabs\Data;
 class Region
 {
     public string $name;
+
     public string $description;
 
     public function __construct(string $name, string $description)

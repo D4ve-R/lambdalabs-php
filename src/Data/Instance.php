@@ -7,33 +7,45 @@ namespace D4veR\LambdaLabs\Data;
 class Instance
 {
     public string $id;
+
     public string $name;
+
     public string $ip;
+
     public string $private_ip;
+
     public string $status;
+
     public array $ssh_key_names;
+
     public array $file_system_names;
+
     public object $region;
+
     public InstanceType $instance_type;
+
     public string $hostname;
+
     public string $jupyter_token;
+
     public string $jupyter_url;
+
     public bool $is_reserved;
 
     public function __construct(
-      string $id,
-      string $name,
-      string $ip,
-      string $private_ip,
-      string $status,
-      array $ssh_key_names,
-      array $file_system_names,
-      object $region,
-      InstanceType $instance_type,
-      string $hostname,
-      string $jupyter_token,
-      string $jupyter_url,
-      bool $is_reserved
+        string $id,
+        string $name,
+        string $ip,
+        string $private_ip,
+        string $status,
+        array $ssh_key_names,
+        array $file_system_names,
+        object $region,
+        InstanceType $instance_type,
+        string $hostname,
+        string $jupyter_token,
+        string $jupyter_url,
+        bool $is_reserved
     ) {
         $this->id = $id;
         $this->name = $name;

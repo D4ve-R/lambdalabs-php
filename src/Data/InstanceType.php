@@ -7,9 +7,13 @@ namespace D4veR\LambdaLabs\Data;
 class InstanceType
 {
     public string $name;
+
     public string $description;
+
     public int $priceCentsPerHour;
+
     public Specs $specs;
+
     /** @var Region[] */
     public array $regionsWithCapacityAvailable;
 
@@ -30,12 +34,12 @@ class InstanceType
     public static function fromArray(array $data): self
     {
         $specs = Specs::fromArray($data['specs']);
-        $regions = array_map(fn($region) => Region::fromArray($region), $data['regions_with_capacity_available']);
+        $regions = array_map(fn ($region) => Region::fromArray($region), $data['regions_with_capacity_available']);
 
         return new self(
             $data['instance_type']['name'],
             $data['instance_type']['description'],
-            (int)$data['instance_type']['price_cents_per_hour'],
+            (int) $data['instance_type']['price_cents_per_hour'],
             $specs,
             $regions
         );

@@ -21,7 +21,7 @@ class Types extends Request
     public function createDtoFromResponse(Response $response): array
     {
         $data = $response->json();
-    
-        return array_map(fn($instanceType) => InstanceType::fromArray($instanceType), $data['data']);
+
+        return array_map(fn ($instanceType) => InstanceType::fromArray($instanceType), $data['data']);
     }
 }

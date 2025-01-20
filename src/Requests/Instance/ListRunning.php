@@ -21,7 +21,7 @@ class ListRunning extends Request
     public function createDtoFromResponse(Response $response): array
     {
         $data = $response->json();
-        
-        return array_map(fn($instance) => Instance::fromArray($instance), $data['data']);
+
+        return array_map(fn ($instance) => Instance::fromArray($instance), $data['data']);
     }
 }

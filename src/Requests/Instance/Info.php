@@ -26,7 +26,7 @@ class Info extends Request
     public function createDtoFromResponse(Response $response): Instance
     {
         $data = $response->json();
-    
+
         return Instance::fromArray($data['data']);
     }
 }
