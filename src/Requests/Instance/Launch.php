@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace D4veR\LambdaLabs\Requests\Instance;
 
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
+use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 
 class Launch extends Request implements HasBody
@@ -37,5 +40,12 @@ class Launch extends Request implements HasBody
             'file_systems' => $this->fileSystems,
             'quantity' => $this->quantity,
         ];
+    }
+
+    public function createDtoFromResponse(Response $response): array
+    {
+        $data = $response->json();
+    
+        return $data['instance_ids'];
     }
 }
