@@ -21,12 +21,7 @@ class ListInstances extends Request
     public function createDtoFromResponse(Response $response): array
     {
         $data = $response->json();
-        $instances = [];
-
-        foreach ($data['data'] as $instance) {
-            $instances[] = Instance::fromArray($instance);
-        }
-
-        return $instances;
+        
+        return array_map(fn($instance) => Instance::fromArray($instance), $data['data']);
     }
 }
