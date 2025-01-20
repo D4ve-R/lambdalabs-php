@@ -4,15 +4,7 @@
 [![Tests](https://img.shields.io/github/actions/workflow/status/d4ver/lambdalabs-php/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/d4ver/lambdalabs-php/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/d4ver/lambdalabs-php.svg?style=flat-square)](https://packagist.org/packages/d4ver/lambdalabs-php)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/lambdalabs-php.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/lambdalabs-php)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package provides a simple PHP client for the [Lambda Labs Cloud API](https://lambdalabs.com/cloud).
 
 ## Installation
 
@@ -54,7 +46,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Dave](https://github.com/D4veR)
+- [Dave](https://github.com/d4ve-r)
 - [All Contributors](../../contributors)
 
 ## License
